@@ -1,0 +1,30 @@
+<div class="main_body">
+	<div class="container main">
+		<div class='row login_form'>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-centered">
+				<form class="form-signin" id='registration_form"'ng-submit='register()'>
+			        <h2 class="form-signin-heading text-center">Register Here</h2>
+			        <div id='registerErrors' ng-if='registerErrors'> <!-- show any errors in registration process -->
+						<div class='alert alert-danger fade-in'>
+							<p>{{ error.message }}</p>
+						</div>
+					</div>
+			        <label class='sr-only' for='first_name'>First Name:</label>
+					<input type='text' class="form-control" id='first_name' name='first_name' placeholder='First Name' ng-model='newUser.first_name' required autofocus>
+					<label class='sr-only' for='last_name'>Last Name:</label>
+					<input type='text' class="form-control" id='last_name' name='last_name' placeholder='Last Name' ng-model='newUser.last_name' required>
+					<label class='sr-only' for='username'>Username:</label>
+					<input type='text' class="form-control" id='username' name='username' placeholder='Username' ng-model='newUser.username' required>
+					<label class='sr-only' for='email'>Email:</label>
+					<input type='email' class="form-control" id='email' name='email' placeholder='Email' ng-model='newUser.email' required>
+					<label class='sr-only' for='password'>Password:</label>
+					<input type='password' class="form-control" id='password' name='password' placeholder='Password' ng-model='newUser.password' required>
+					<label class='sr-only' for='confirmPassword'>Confirm Password:</label>
+					<input type='password' class="form-control" id='confirmPassword' name='confirmPassword' placeholder='Confirm Password' ng-model='newUser.confirmPassword' required>
+			        <button class="btn btn-lg btn-primary btn-block" id="login_button" type="submit">Register</button>
+			    </form>
+			    <p class='text-center'>Already registered?  Login <a href="#/login">here</a>!</p>
+			</div>
+		</div>
+	</div>
+</div>

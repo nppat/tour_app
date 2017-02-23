@@ -1,0 +1,130 @@
+<div class='main_body'>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class='navbar-header'>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		    <a class="navbar-brand">Tour App</a>
+		    </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        	<ul class="nav navbar-nav navbar-right">
+		        		<li><a href='#/home'>Home</a></li>
+		            	<li><a href="#/user/{{ user_id }}">User Profile</a></li>
+		            	<li><a href="#" ng-click="logout()">Logout</a></li>
+		        	</ul>
+		        </div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</nav>
+	<div class='container main'>
+		<div class="row welcome">
+			<div class='col-lg-12 col-md-12 col-sm-12'>
+				<h1>Add a new venue</h1>
+				<p class='text-center'>Fill out as much information as accurately as you can.</p>
+			</div>
+		</div>
+		<div class="row venue_form">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-centered">
+				<form ng-submit='create_venue()'>
+					<div class='form-group'>
+						<label for="name">Venue Name</label>
+						<input type='text' class='form-control' id='name' name='name' placeholder='Venue name' ng-model='newVenue.name' required>
+					</div>
+					<div class='form-group'>
+						<label for="promoter">Promoter</label>
+						<input type='text' class='form-control' id='promoter' name='promoter' placeholder='Promoter name' ng-model='newVenue.promoter'>
+					</div>
+					<div class='form-group'>
+						<div class='input-group'>
+							<label for="street">Street Address,</label>
+							<input type='text' class='form-control' id='street' name='street' placeholder='Street Address' ng-model='newVenue.street_address'>
+							<label for="city">City,</label>
+							<input type='city' class='form-control' id='city' name='city' placeholder='City' ng-model='newVenue.city' required>
+							<label for="state">State,</label>
+							<input type='text' class='form-control' id='state' name='state' placeholder='State' ng-model='newVenue.state' required>
+							<label for="zip">Zip Code</label>
+							<input type='number' class='form-control' id='zip' name='zip' placeholder='Zip Code' ng-model='newVenue.zip'>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label for="phone_number">Phone Number (xxx)-xxx-xxxx</label>
+						<input type='text' class='form-control' id='phone_number' name='phone_number' placeholder='Phone Number (xxx)-xxx-xxxx' ng-model='newVenue.phone_number'>
+					</div>
+					<div class='form-group'>
+						<label for="email">Email</label>
+						<input type='email' class='form-control' id='email' name='email' placeholder='Email' ng-model='newVenue.email'>
+					</div>
+					<div class='form-group'>
+						<label for="bus_parking">Bus Parking</label>
+						<textarea class='form-control' rows='5' id='bus_parking' placeholder='Be specific!' ng-model='newVenue.bus_parking'></textarea>
+					</div>
+					<div class='form-group'>
+						<label for='sound'>Sound Specifics</label>
+						<textarea class='form-control' rows='10' id='sound' placeholder='Equipment, fees, bring your own stuff, engineer included or not?' ng-model='newVenue.sound'></textarea>
+					</div>
+					<div class='form-group'>
+						<label for="capacity">Venue Capacity</label>
+						<input type='text' class='form-control' id='capactiy' name='capacity' placeholder='How many people will this place hold?' ng-model='newVenue.venue_capacity'>
+					</div>
+					<div class='form-group'>
+						<label for="fuel">Fuel Price</label>
+						<div class="input-group">
+  							<span class="input-group-addon">$</span>
+ 							<input type="number" class="form-control" id='fuel' aria-label="Fuel Price" step='0.01' placeholder="Fuel Price" ng-model='newVenue.fuel_price'>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label for="food_coffee_etc">Food, Coffee, Hotels near Venue</label>
+						<textarea class='form-control' rows='10' id='food_coffee_etc' placeholder='Be specific!' ng-model='newVenue.food_coffee'></textarea>
+					</div>
+					<div class='form-group'>
+						<label for="bars">Bars and Restaurants Unique to Area</label>
+						<textarea class='form-control' id='bars' name='bars'rows='10' placeholder='Anywhere unique to drink or eat at?' ng-model='newVenue.bars'></textarea>
+					</div>
+					<div class='form-group'>
+						<label for="cheap_free">Cheap or free things to do</label>
+						<textarea class='form-control' id='cheap_free' name='cheap_free'rows='10' placeholder='Cheap and free is the key' ng-model='newVenue.things_to_do'></textarea>
+					</div>
+					<h3>Venue Ammenities</h3>
+					<div class='form-group'>
+						<div class='input-group'>
+							<label>Showers?</label>
+							<div class="checkbox">
+								<label class='checkbox-inline'><input type='checkbox' value='yes'ng-model='newVenue.showers.yes'>Yes</label>
+								<label class='checkbox-inline'><input type='checkbox' value='no' ng-model='newVenue.showers.no'>No</label>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<div class='input-group'>
+							<label>WiFi?</label>
+							<div class="checkbox">
+								<label class='checkbox-inline'><input type='checkbox' value='yes' ng-model='newVenue.wifi.yes'>Yes</label>
+								<label class='checkbox-inline'><input type='checkbox' value='no' ng-model='newVenue.wifi.no'>No</label>
+							</div>
+							<input type='text' class='form-control' placeholder="WiFi Password" ng-model='newVenue.wifi_password'>
+						</div>
+					</div>
+					<div class='form-group'>
+						<div class='input-group'>
+							<label>Free Catering and Booze?</label>
+							<div class="checkbox">
+								<label class='checkbox-inline'><input type='checkbox' value='yes' ng-model='newVenue.free_booze.yes'>Yes</label>
+								<label class='checkbox-inline'><input type='checkbox' value='no' ng-model='newVenue.free_booze.no'>No</label>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label for="laundry">Laundry Facilities</label>
+						<textarea class='form-control' id='laundry' name='laundry'rows='10' placeholder='Laundry facilities near or at the venue?  Please share!' ng-model='newVenue.laundry'></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block">Add Venue</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

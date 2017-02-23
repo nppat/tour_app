@@ -1,0 +1,30 @@
+.main {
+	margin-top: 5%;
+}
+.welcome,
+.venue_form {
+	margin-bottom: 5%;
+}
+
+.search_bar,
+.add_venue {
+	margin-bottom: 3%;
+}
+
+.welcome h1 {
+	text-align: center;
+}
+
+/* ************** .col-centered is for centering inputs and divs ******************* */
+.col-centered {
+	margin: 0 auto;
+	float: none;
+}
+/************************************************************************************/
+
+/* ************** Login and Registration partials ******************* */
+#login_email, #login_password, #login_button, #first_name, #last_name,
+#username, #email, #password, #confirmPassword {
+	margin-bottom: 1%;
+}
+/************************************************************************************/

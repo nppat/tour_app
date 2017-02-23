@@ -1,0 +1,72 @@
+<div class="main body">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class='navbar-header'>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		    <a class="navbar-brand">Tour App</a>
+		    </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        	<ul class="nav navbar-nav navbar-right">
+		        		<li><a href="#/home">Home</a></li>
+		            	<li><a href="#/user/{{ user_id }}">User Profile</a></li>
+		            	<li><a href="#" ng-click="logout()">Logout</a></li>
+		        	</ul>
+		        </div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</nav>
+	<div class='container main'>
+		<div class="row welcome">
+			<div class='col-lg-12 col-md-12 col-sm-12'>
+				<h1>{{ venue.name }}</h1>
+				<section>
+					<h3>Address</h3>
+					<address>
+						{{ venue.street_address }}<br>
+						{{ venue.city }}, {{ venue.state }}, {{ venue.zip}}<br>
+						<abbr title="Phone">P:</abbr>  {{ venue.phone_number }}<br>
+						Email:  {{ venue.email }}
+					</address>
+					<p>Promoter Name:  {{ venue.promoter }}</p>
+					<p>Venue Capacity:  {{ venue.capacity }}</p>
+				</section>
+				<section>
+					<h3>Bus Parking</h3>
+					<p>{{ venue.bus_parking }}</p>
+				</section>
+				<section>
+					<h3>Sound and Engineer</h3>
+					<p>{{ venue.sound }}</p>
+				</section>
+				<section>
+					<h3>Food, Bars, and Things to Do near {{ venue.name }}</h3>
+					<section>
+						<h4>Food, Coffee, and Hotels</h4>
+						<p>{{ venue.food_coffee }}</p>
+					</section>
+					<section>
+						<h4>Bars and Restaraunts</h4>
+						<p>{{ venue.bars }}</p>
+					</section>
+					<section>
+						<h4>Cheap or Free Things to do</h4>
+						<p>{{ venue.things_to_do }}</p>
+					</section>
+					<section>
+						<h4>Fuel Price</h4>
+						<p ng-if='venue.fuel_price'>${{ venue.fuel_price }}/gal. Updated at: {{venue.updatedAt | date:"M/d/yy h:mm a"}}</p>
+					</section>
+					<section>
+						<h4>Laundry Facilities</h4>
+						<p>{{ venue.laundry }}</p>
+					</section>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

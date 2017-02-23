@@ -1,0 +1,45 @@
+<div class='main_body'>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class='navbar-header'>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		    <a class="navbar-brand">Tour App</a>
+		    </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		        	<ul class="nav navbar-nav navbar-right">
+		            	<li><a href="#/home">Home</a></li>
+		            	<li><a href="#" ng-click="logout()">Logout</a></li>
+		        	</ul>
+		        </div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</nav>
+	<div class="container main">
+		<div class="row">
+			<div class='col-xl-6 col-lg-6 col-md-6 col-sm-12 col-centered'>
+				<form class="form-signin" id='edit_form"'ng-submit='edit_user()'>
+				        <h2 class="form-signin-heading text-center">Edit {{ user.username }}'s Information</h2>
+				        <div id='editErrors' ng-if='editErrors'> <!-- show any errors in registration process -->
+							<div class='alert alert-danger fade-in'>
+								<p>{{ error.message }}</p>
+							</div>
+						</div>
+				        <label class='sr-only' for='first_name'>First Name:</label>
+						<input type='text' class="form-control" id='first_name' name='first_name' ng-model='editUser.first_name' required autofocus>
+						<label class='sr-only' for='last_name'>Last Name:</label>
+						<input type='text' class="form-control" id='last_name' name='last_name' ng-model='editUser.last_name' required>
+						<label class='sr-only' for='username'>Username:</label>
+						<input type='text' class="form-control" id='username' name='username' ng-model='editUser.username' required>
+						<label class='sr-only' for='email'>Email:</label>
+						<input type='email' class="form-control" id='email' name='email' ng-model='editUser.email' required>
+				        <button class="btn btn-lg btn-primary btn-block" id="updateUser_button" type="submit">Update User</button>
+			      </form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<div class="main_body">
+	<div class="container main">
+		<div class='row login_form'>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-centered">
+				<form class="form-signin" id='login_form' ng-submit='login()'>
+				        <h2 class="form-signin-heading text-center">Login to continue</h2>
+				        <div id='loginErrors' ng-if='loginErrors'> <!-- show any errors in login process -->
+							<div class='alert alert-danger fade-in'>
+								<p>Error! - {{ error.message }}</p>
+							</div>
+						</div>
+				        <label for="login_email" class="sr-only">Email</label>
+				        <input type="email" id="login_email" class="form-control" placeholder="Email" ng-model='loginUser.login_email' required autofocus>
+				        <label for="login_password" class="sr-only">Password</label>
+				        <input type="password" id="login_password" class="form-control" placeholder="Password" ng-model='loginUser.login_password' required>
+				        <button class="btn btn-lg btn-primary btn-block" id="login_button" type="submit">Sign in</button>
+			      </form>
+			      <p class='text-center'>Not a user?  Register <a href="#/register">here</a>!</p>
+			</div>
+		</div>
+	</div>
+</div>
