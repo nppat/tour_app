@@ -17,12 +17,14 @@ function UsersController() {
 		User.findOne({ email: email }, function(err, user) {
 			// Check to see if user email/password is valid
 			if (err) {
-				res.json({errors: '***** Server: Email and/or password is invalid ******'});
+				console.log("******* Server-side: Login Error ******")
+				res.json({errors: 'Email and/or password is invalid'});
 			} else {
 				// If user checks out, compare user with password
 				if(bcrypt.compareSync(password, user.password)  == false ) {
 					// passwords do not match
-					res.json({errors: '***** Server: Email and/or password is invalid ******'});
+					console.log("******* Server-side: Login Error - Email and/or password is invalid ******")
+					res.json({errors: 'Email and/or password is invalid'});
 				}
 				else{
 					// user and password match
@@ -47,7 +49,7 @@ function UsersController() {
 		user.save( function(err, user) {
 			if(err) {
 				console.log("******[Server - User Controller]: Register Error ******", err)
-				res.json({ errors: err.errors });
+				res.json({ errors: 'Registraton Error' });
 			} else {
 				console.log('******[Server - User Controller]: Registraton Success ******', user)
 				res.json(user);
