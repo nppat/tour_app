@@ -6,7 +6,12 @@
 			        <h2 class="form-signin-heading text-center">Register Here</h2>
 			        <div id='registerErrors' ng-if='registerErrors'> <!-- show any errors in registration process -->
 						<div class='alert alert-danger fade-in'>
-							<p>{{ error.message }}</p>
+							<p>{{ registrationErrors }}</p>
+						</div>
+					</div>
+					<div id='pwFail' ng-if='pwFail'> <!-- show any errors in registration process -->
+						<div class='alert alert-danger fade-in'>
+							<p>{{ pwFail }}</p>
 						</div>
 					</div>
 			        <label class='sr-only' for='first_name'>First Name:</label>
